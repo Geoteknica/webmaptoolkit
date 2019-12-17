@@ -140,7 +140,7 @@
           popupAnchor: [0,-15] // point from which the popup should open relative to the iconAnchor
           });
       var imgcntresiliencia = L.icon({
-          iconUrl: 'img/power.svg',
+          iconUrl: 'img/shelter.svg',
           iconSize: [15, 25], // size of the icon
           popupAnchor: [0,-15] // point from which the popup should open relative to the iconAnchor
           });
@@ -254,12 +254,14 @@
                   },
               }).addTo (map);
 
-          objOverlays = {
+          objOverlaysRiesgo = {
             "Erosión costera a 30 años": lyr30yrCoastalEro,
             //"Erosión costera a 60 años": lyr60yrCoastalEro,
             "Aumento del nivel del mar 3ft": lyrSLR3ft,
             //"Aumento del nivel del mar 6ft": lyrSLR6ft,
-            "Áreas inundables": lyrFlood,
+            "Áreas inundables": lyrFlood
+            };
+        objOverlaysCntServ = {
             "<img src='img/houses.svg'height=18> Sectores": lyrSectores,
             "<img src='img/shop.svg'height=18> Colmados": lyrColmados,
             "<img src='img/medicine.svg'height=18> Farmacias": lyrFarmacias,
@@ -269,7 +271,7 @@
             "<img src='img/power.svg'height=18> Centros de Resiliencia": lyrCntresiliencia
           };
 
-          ctlLayers = L.control.layers(objBasemaps,objOverlays).addTo(map);
+          ctlLayers = L.control.layers(objBasemaps,objOverlaysRiesgo,objOverlaysCntServ).addTo(map);
           scale = L.control.scale().addTo(map);
 
 
