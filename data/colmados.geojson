@@ -293,7 +293,6 @@
 { "type": "Feature", "properties": { "COMPANY_NAME": "Cafeteria Colmado La Parada", "ide": 288 }, "geometry": { "type": "Point", "coordinates": [ -66.610913, 18.006109 ] } },
 { "type": "Feature", "properties": { "COMPANY_NAME": "Almacenes Pitusa", "ide": 289 }, "geometry": { "type": "Point", "coordinates": [ -65.654394, 18.332087 ] } },
 { "type": "Feature", "properties": { "COMPANY_NAME": "Colmado Carrasquillo", "ide": 290 }, "geometry": { "type": "Point", "coordinates": [ -65.884156, 18.379095 ] } },
-{ "type": "Feature", "properties": { "COMPANY_NAME": "COLMADO SOBRINO", "ide": 291 }, "geometry": { "type": "Point", "coordinates": [ 66.62052917, 18.00561523 ] } },
 { "type": "Feature", "properties": { "COMPANY_NAME": "COLMADO EL MILENIO", "ide": 292 }, "geometry": { "type": "Point", "coordinates": [ -66.72446441, 18.16407966 ] } },
 { "type": "Feature", "properties": { "COMPANY_NAME": "COLMADO ESTRELLA", "ide": 293 }, "geometry": { "type": "Point", "coordinates": [ -67.19102478, 18.38060188 ] } },
 { "type": "Feature", "properties": { "COMPANY_NAME": "EDUARDS MINNI MARKET", "ide": 294 }, "geometry": { "type": "Point", "coordinates": [ -67.18418121, 18.38252449 ] } },
@@ -922,12 +921,6 @@
 { "type": "Feature", "properties": { "COMPANY_NAME": "JUAN CORCHADO", "ide": 917 }, "geometry": { "type": "Point", "coordinates": [ -66.15247344, 18.39084053 ] } },
 { "type": "Feature", "properties": { "COMPANY_NAME": "PLACITA COFRESI", "ide": 918 }, "geometry": { "type": "Point", "coordinates": [ -66.15247344, 18.39084053 ] } },
 { "type": "Feature", "properties": { "COMPANY_NAME": "LA NUEVA MINA", "ide": 919 }, "geometry": { "type": "Point", "coordinates": [ -66.15247344, 18.39084053 ] } },
-{ "type": "Feature", "properties": { "COMPANY_NAME": "JOSE A REYES CALDERON GROCERY", "ide": 920 }, "geometry": { "type": "Point", "coordinates": [ -66.15957641, 18.41321182 ] } },
-{ "type": "Feature", "properties": { "COMPANY_NAME": "SUPERMERCADO DIAZ", "ide": 921 }, "geometry": { "type": "Point", "coordinates": [ 66.10814666, 18.36501121 ] } },
-{ "type": "Feature", "properties": { "COMPANY_NAME": "SUPERMERCADO ECONO", "ide": 922 }, "geometry": { "type": "Point", "coordinates": [ 65.99347686, 18.35236167 ] } },
-{ "type": "Feature", "properties": { "COMPANY_NAME": "COLMADO CASTRO", "ide": 923 }, "geometry": { "type": "Point", "coordinates": [ 65.99347686, 18.35236167 ] } },
-{ "type": "Feature", "properties": { "COMPANY_NAME": "CINTROMAX PLAZA", "ide": 924 }, "geometry": { "type": "Point", "coordinates": [ 65.99347686, 18.35236167 ] } },
-{ "type": "Feature", "properties": { "COMPANY_NAME": "LA FRONTERA FOOD MARKET", "ide": 925 }, "geometry": { "type": "Point", "coordinates": [ 66.02159881, 18.44094467 ] } },
-{ "type": "Feature", "properties": { "COMPANY_NAME": "FRESHMART", "ide": 926 }, "geometry": { "type": "Point", "coordinates": [ 65.95616912, 18.37980842 ] } }
+{ "type": "Feature", "properties": { "COMPANY_NAME": "JOSE A REYES CALDERON GROCERY", "ide": 920 }, "geometry": { "type": "Point", "coordinates": [ -66.15957641, 18.41321182 ] } }
 ]
 }
