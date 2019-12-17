@@ -75,18 +75,17 @@
       var lyrMapbox;
       // declare layer Erosion costera
       var lyr30yrCoastalEro;
-      var lyr60yrCoastalEro;
+
       // declare layer Aumento del nivel del mar 3 pies
       var lyrSLR3ft;
-      // declare layer Aumento del nivel del mar 6 pies
-      var lyrSLR6ft;
+
       // declare layer inundacion
       var lyrFlood;
 
       // declare layer Sectores
       var lyrSectores;
 
-      var searchsector;
+
       // declare layer Colmados
       var lyrColmados;
       // declare layer Farmacias
@@ -97,6 +96,22 @@
       var lyrRefugios;
       // declare layer Cntresiliencia
       var lyrCntresiliencia;
+      // declare layer Hospitales
+      var lyrHospitales;
+      // declare Buffer layer Colmados
+      var bufColmados;
+      // declare Buffer layer Farmacias
+      var bufFarmacias;
+      // declare Buffer layer Instreligiosa
+      var bufInsreligiosa;
+      // declare Buffer layer Refugios
+      var bufRefugios;
+      // declare Buffer layer Cntresiliencia
+      var bufCntresiliencia;
+      // declare Buffer layer Hospitales
+      var bufHospitales;
+
+      var searchsector;
 
       var ctlLayers;
       var objBasemaps;
@@ -139,18 +154,23 @@
           iconSize: [15, 25], // size of the icon
           popupAnchor: [0,-15] // point from which the popup should open relative to the iconAnchor
           });
+      var imghospital = L.icon({
+          iconUrl: 'img/hospital.svg',
+          iconSize: [15, 25], // size of the icon
+          popupAnchor: [0,-15] // point from which the popup should open relative to the iconAnchor
+          });
       var slr3ftstyle = {
           "color": "#00FFFF",
           "weight": 5,
           "opacity": 0.65
           };
 
-
+          //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
           map = L.map('map',{
                   center: [18.253579, -66.378914],
                   zoom: 10,
                       });
-
+          //  create basemaps, one satellite image, one base
           lyrCarto = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
                   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
                   subdomains: 'abcd',
@@ -179,15 +199,6 @@
               }
               });
 
-          //lyr60yrCoastalEro = L.geoJSON.ajax('data/60yrcoastero.geojson',{
-              //style: function (feature) {
-              //return {};
-              //},
-              //onEachFeature: function (feature, layer) {
-              //layer.bindPopup("Erosión costera a 60 años");
-              //}
-              //});
-
           lyrSLR3ft = L.geoJSON.ajax('data/slr3ftinland.geojson',{
               style: function (feature) {
               return {};
@@ -196,14 +207,7 @@
               layer.bindPopup("Aumento del nivel del mar 3ft");
               }
               });
-          //lyrSLR6ft = L.geoJSON.ajax('data/slr6ftinland.geojson',{
-              //style: function (feature) {
-              //return {};
-              //},
-              //onEachFeature: function (feature, layer) {
-              //layer.bindPopup("Aumento del nivel del mar 6ft");
-              //}
-              //});
+
           lyrFlood = L.geoJSON.ajax('data/fldhazdiss.geojson',{
               style: function (feature) {
               return {};
@@ -214,14 +218,14 @@
               });
 
 
-          lyrColmados = L.geoJSON.ajax('data/colmados.geojson',{
-              pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {icon: imgcolmado});
-                },
-              });
           lyrSectores = L.geoJSON.ajax('data/sectores.geojson',{
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imgcasa});
+                },
+              });
+          lyrColmados = L.geoJSON.ajax('data/colmados.geojson',{
+              pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: imgcolmado});
                 },
               });
           lyrFarmacias = L.geoJSON.ajax('data/farmacias.geojson',{
@@ -235,6 +239,11 @@
                 },
               });
           lyrRefugios = L.geoJSON.ajax('data/refugios_aemead.geojson',{
+              pointToLayer: function(feature, latlng) {
+                  return L.marker(latlng, {icon: imgrefugios});
+                },
+              });
+          lyrHospitales = L.geoJSON.ajax('data/hospitales.geojson',{
               pointToLayer: function(feature, latlng) {
                   return L.marker(latlng, {icon: imgrefugios});
                 },
@@ -256,7 +265,8 @@
             "<img src='img/medicine.svg'height=18> Farmacias": lyrFarmacias,
             "<img src='img/christian-church.svg'height=18> Inst religiosas": lyrInsreligiosa,
             "<img src='img/refugio.svg'height=18> Refugios": lyrRefugios,
-            "<img src='img/power.svg'height=18> Cnts Resiliencia": lyrCntresiliencia
+            "<img src='img/hospital.svg'height=18> Hospitales": lyrHospitales,
+            "<img src='img/power.svg'height=18> Centros de Resiliencia": lyrCntresiliencia
           };
 
           ctlLayers = L.control.layers(objBasemaps,objOverlays).addTo(map);
