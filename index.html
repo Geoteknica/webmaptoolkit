@@ -246,7 +246,7 @@
               });
           lyrHospitales = L.geoJSON.ajax('data/hospitales.geojson',{
               pointToLayer: function(feature, latlng) {
-                  return L.marker(latlng, {icon: imgrefugios});
+                  return L.marker(latlng, {icon: imghospital});
                 },
               });
           lyrCntresiliencia = L.geoJSON.ajax('data/cnts_resiliencia.geojson',{
@@ -254,12 +254,15 @@
                   return L.marker(latlng, {icon: imgcntresiliencia});
                   },
               }).addTo (map);
+          bufFarmacias = L.geoJSON.ajax('data/buff_farmacias.geojson',{
+              style: function (feature) {
+              return {};
+              },
+          });
 
           objOverlaysRiesgo = {
             "Erosión costera a 30 años": lyr30yrCoastalEro,
-            //"Erosión costera a 60 años": lyr60yrCoastalEro,
             "Aumento del nivel del mar 3ft": lyrSLR3ft,
-            //"Aumento del nivel del mar 6ft": lyrSLR6ft,
             "Áreas inundables": lyrFlood
             };
         objOverlaysCntServ = {
@@ -272,7 +275,7 @@
             "<img src='img/power.svg'height=18> Centros de Resiliencia": lyrCntresiliencia
           };
 
-          ctlLayers = L.control.layers(objBasemaps,objOverlaysRiesgo,objOverlaysCntServ).addTo(map);
+          ctlLayers = L.control.layers(objBasemaps, objOverlaysCntServ).addTo(map);
           scale = L.control.scale().addTo(map);
 
 
