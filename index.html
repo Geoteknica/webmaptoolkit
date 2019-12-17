@@ -260,12 +260,10 @@
               },
           });
 
-          objOverlaysRiesgo = {
+          objOverlays = {
             "Erosión costera a 30 años": lyr30yrCoastalEro,
             "Aumento del nivel del mar 3ft": lyrSLR3ft,
-            "Áreas inundables": lyrFlood
-            };
-        objOverlaysCntServ = {
+            "Áreas inundables": lyrFlood,
             "<img src='img/houses.svg'height=18> Sectores": lyrSectores,
             "<img src='img/shop.svg'height=18> Colmados": lyrColmados,
             "<img src='img/medicine.svg'height=18> Farmacias": lyrFarmacias,
@@ -275,7 +273,7 @@
             "<img src='img/shelter.svg'height=18> Centros de Resiliencia": lyrCntresiliencia
           };
 
-          ctlLayers = L.control.layers(objBasemaps, objOverlaysCntServ).addTo(map);
+          ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(map);
           scale = L.control.scale().addTo(map);
 
 
