@@ -237,6 +237,7 @@
               },
               onEachFeature: function (feature, layer) {
               layer.bindPopup(feature.properties.COMPANY_NAME);
+              }
           });
           bufColmados = L.geoJSON.ajax('data/buff_colmados.geojson',{
               style: function (feature) {
