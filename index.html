@@ -286,7 +286,7 @@
                 return {};
               },
               onEachFeature: function (feature, layer) {
-              layer.bindPopup(feature.properties.Name);
+              layer.bindPopup(feature.properties.NOMBRE);
               }
           });
           var Refugios = L.layerGroup([lyrRefugios,bufRefugios]);
