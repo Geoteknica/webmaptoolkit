@@ -45,8 +45,13 @@
       <link rel="stylesheet" href="style.css" />
 
     <!-- Load Grouped Layer Control -->
-      <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css" />
-      <script src="src/leaflet.groupedlayercontrol.min.js">
+      <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
+      <script src="src/leaflet.groupedlayercontrol.min.js" type="text/javascript"></script>
+
+    <!-- Load Font Awesome icons -->
+      <script src="https://use.fontawesome.com/a64989e3a8.js"></script>
+
+
     <!-- set width and height styles for map -->
     <style>
         body {
@@ -71,7 +76,7 @@
     //<div class='pointer'><< Click search button</div>
     <script>
 
-      //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
+      //
       var map;
       var lyrCarto;
       var lyrMapbox;
@@ -171,7 +176,7 @@
           map = L.map('map',{
                   center: [18.253579, -66.378914],
                   zoom: 10,
-                      });
+          });
           //  create basemaps, one satellite image, one base
           lyrCarto = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
                   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -280,10 +285,12 @@
 
           //ctlLayers = L.control.groupedLayers(objBasemaps, groupedOverlays).addTo(map);
           L.control.groupedLayers(groupedOverlays).addTo(map);
+
+          //add scale bar to map
           scale = L.control.scale().addTo(map);
 
 
-
+          //add search control to layer sectores
           var searchControl = new L.Control.Search({
           		layer: lyrSectores,
           		propertyName: 'NOMBRE',
