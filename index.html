@@ -230,6 +230,8 @@
                 return L.marker(latlng, {icon: imgcasa});
               },
           });
+
+          //add layers Centros de servicios then combine into LayerGroup
           lyrColmados = L.geoJSON.ajax('data/colmados.geojson',{
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imgcolmado});
@@ -240,7 +242,7 @@
                 return {};
               },
           });
-          var colmados = L.layerGroup([lyrColmados,bufColmados]);
+          var Colmados = L.layerGroup([lyrColmados,bufColmados]);
 
           lyrFarmacias = L.geoJSON.ajax('data/farmacias.geojson',{
               pointToLayer: function(feature, latlng) {
@@ -252,6 +254,8 @@
                 return {};
               },
           });
+          var Farmacias = L.layerGroup([lyrFarmacias,bufFarmacias]);
+
           lyrInsreligiosa = L.geoJSON.ajax('data/instreligiosa.geojson',{
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imginstreligiosa});
@@ -262,6 +266,8 @@
                 return {};
               },
           });
+          var Instreligiosas = L.layerGroup([lyrInsreligiosa,bufInsreligiosa]);
+
           lyrRefugios = L.geoJSON.ajax('data/refugios_aemead.geojson',{
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imgrefugios});
@@ -272,6 +278,8 @@
                 return {};
               },
           });
+          var Refugios = L.layerGroup([lyrRefugios,bufRefugios]);
+
           lyrHospitales = L.geoJSON.ajax('data/hospitales.geojson',{
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imghospital});
@@ -282,6 +290,8 @@
                 return {};
               },
           });
+          var Hospitales = L.layerGroup([lyrHospitales,bufHospitales]);
+
           lyrCntresiliencia = L.geoJSON.ajax('data/cnts_resiliencia.geojson',{
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imgcntresiliencia});
@@ -292,6 +302,7 @@
                 return {};
               },
           });
+          var CntsResiliencia = L.layerGroup([lyrCntresiliencia,bufCntresiliencia]);
 
 
            //Overlay grouped layers
@@ -303,12 +314,12 @@
             },
             "Centros de servicio": {
               "<img src='img/houses.svg'height=18> Sectores": lyrSectores,
-              "<img src='img/shop.svg'height=18> Colmados": colmados,
-              "<img src='img/medicine.svg'height=18> Farmacias": lyrFarmacias,
-              "<img src='img/christian-church.svg'height=18> Inst religiosas": lyrInsreligiosa,
-              "<img src='img/refugio.svg'height=18> Refugios": lyrRefugios,
-              "<img src='img/hospital.svg'height=18> Hospitales": lyrHospitales,
-              "<img src='img/shelter.svg'height=18> Centros de Resiliencia": lyrCntresiliencia
+              "<img src='img/shop.svg'height=18> Colmados": Colmados,
+              "<img src='img/medicine.svg'height=18> Farmacias": Farmacias,
+              "<img src='img/christian-church.svg'height=18> Inst religiosas": Instreligiosas,
+              "<img src='img/refugio.svg'height=18> Refugios": Refugios,
+              "<img src='img/hospital.svg'height=18> Hospitales": Hospitales,
+              "<img src='img/shelter.svg'height=18> Centros de Resiliencia": CntsResiliencia
             }
           };
 
