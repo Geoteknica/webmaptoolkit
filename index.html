@@ -250,6 +250,9 @@
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imgfarmacia});
               },
+              onEachFeature: function (feature, layer) {
+              layer.bindPopup(feature.properties.COMPANY_NAME);
+              }
           });
           bufFarmacias = L.geoJSON.ajax('data/buff_farmacias.geojson',{
               style: function (feature) {
@@ -262,6 +265,9 @@
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imginstreligiosa});
               },
+              onEachFeature: function (feature, layer) {
+              layer.bindPopup(feature.properties.COMPANY_NAME);
+              }
           });
           bufInsreligiosa = L.geoJSON.ajax('data/buff_instreligiosa.geojson',{
               style: function (feature) {
@@ -279,6 +285,9 @@
               style: function (feature) {
                 return {};
               },
+              onEachFeature: function (feature, layer) {
+              layer.bindPopup(feature.properties.Name);
+              }
           });
           var Refugios = L.layerGroup([lyrRefugios,bufRefugios]);
 
@@ -286,6 +295,9 @@
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imghospital});
               },
+              onEachFeature: function (feature, layer) {
+              layer.bindPopup(feature.properties.NOMBRE);
+              }
           });
           bufHospitales = L.geoJSON.ajax('data/buff_hospitales.geojson',{
               style: function (feature) {
@@ -298,6 +310,9 @@
               pointToLayer: function(feature, latlng) {
                 return L.marker(latlng, {icon: imgcntresiliencia});
               },
+              onEachFeature: function (feature, layer) {
+              layer.bindPopup(feature.properties.Organizati);
+              }
           }).addTo (map);
           bufCntresiliencia = L.geoJSON.ajax('data/buff_cnts_resiliencia.geojson',{
               style: function (feature) {
