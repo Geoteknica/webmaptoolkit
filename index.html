@@ -284,7 +284,7 @@
           };
 
           //ctlLayers = L.control.groupedLayers(objBasemaps, groupedOverlays).addTo(map);
-          L.control.groupedLayers(groupedOverlays).addTo(map);
+          L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
 
           //add scale bar to map
           scale = L.control.scale().addTo(map);
