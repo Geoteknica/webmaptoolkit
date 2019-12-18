@@ -116,7 +116,7 @@
       var searchsector;
 
       var ctlLayers;
-      var objBasemaps;
+      var baseLayers;
       var groupedOverlays;
       var scale;
 
@@ -188,7 +188,7 @@
                   });
 
 
-          objBasemaps = {
+          baseLayers = {
                  "Mapa base": lyrCarto,
                  "Imagen aérea": lyrMapbox
                };
@@ -275,7 +275,7 @@
               "<img src='img/refugio.svg'height=18> Refugios": lyrRefugios,
               "<img src='img/hospital.svg'height=18> Hospitales": lyrHospitales,
               "<img src='img/shelter.svg'height=18> Centros de Resiliencia": lyrCntresiliencia
-            },
+            }
           };
 
           ctlLayers = L.control.groupedLayers(objBasemaps, groupedOverlays).addTo(map);
