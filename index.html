@@ -44,7 +44,9 @@
       <script src="src/leaflet-search.src.js"></script>
       <link rel="stylesheet" href="style.css" />
 
-
+    <!-- Load Grouped Layer Control -->
+      <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.css" />
+      <script src="src/leaflet.groupedlayercontrol.js">
     <!-- set width and height styles for map -->
     <style>
         html, body {
@@ -188,8 +190,8 @@
 
 
           objBasemaps = {
-                 "Carto basemap": lyrCarto,
-                 "Imagen basemap": lyrMapbox
+                 "Mapa base": lyrCarto,
+                 "Imagen aérea": lyrMapbox
                };
           lyr30yrCoastalEro = L.geoJSON.ajax('data/30yrcoastero.geojson',{
               style: function (feature) {
@@ -261,19 +263,23 @@
           }).addTo (map);
 
           objOverlays = {
-            "Erosión costera a 30 años": lyr30yrCoastalEro,
-            "Aumento del nivel del mar 3ft": lyrSLR3ft,
-            "Áreas inundables": lyrFlood,
-            "<img src='img/houses.svg'height=18> Sectores": lyrSectores,
-            "<img src='img/shop.svg'height=18> Colmados": lyrColmados,
-            "<img src='img/medicine.svg'height=18> Farmacias": lyrFarmacias,
-            "<img src='img/christian-church.svg'height=18> Inst religiosas": lyrInsreligiosa,
-            "<img src='img/refugio.svg'height=18> Refugios": lyrRefugios,
-            "<img src='img/hospital.svg'height=18> Hospitales": lyrHospitales,
-            "<img src='img/shelter.svg'height=18> Centros de Resiliencia": lyrCntresiliencia
+            "Riesgos": {
+              "Erosión costera a 30 años": lyr30yrCoastalEro,
+              "Aumento del nivel del mar 3ft": lyrSLR3ft,
+              "Áreas inundables": lyrFlood
+            },
+            "Centros de servicio": {
+              "<img src='img/houses.svg'height=18> Sectores": lyrSectores,
+              "<img src='img/shop.svg'height=18> Colmados": lyrColmados,
+              "<img src='img/medicine.svg'height=18> Farmacias": lyrFarmacias,
+              "<img src='img/christian-church.svg'height=18> Inst religiosas": lyrInsreligiosa,
+              "<img src='img/refugio.svg'height=18> Refugios": lyrRefugios,
+              "<img src='img/hospital.svg'height=18> Hospitales": lyrHospitales,
+              "<img src='img/shelter.svg'height=18> Centros de Resiliencia": lyrCntresiliencia
+            },
           };
 
-          ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(map);
+          ctlLayers = L.control.groupedLayers(objBasemaps, objOverlays).addTo(map);
           scale = L.control.scale().addTo(map);
 
 
