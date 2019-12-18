@@ -313,13 +313,13 @@
               onEachFeature: function (feature, layer) {
               layer.bindPopup(feature.properties.Organizati);
               }
-          }).addTo (map);
+          });
           bufCntresiliencia = L.geoJSON.ajax('data/buff_cnts_resiliencia.geojson',{
               style: function (feature) {
                 return {};
               },
-          }).addTo (map);
-          var CntsResiliencia = L.layerGroup([lyrCntresiliencia,bufCntresiliencia]);
+          });
+          var CntsResiliencia = L.layerGroup([lyrCntresiliencia,bufCntresiliencia]).addTo (map);
 
 
            //Overlay grouped layers
