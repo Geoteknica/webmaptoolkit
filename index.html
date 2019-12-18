@@ -117,8 +117,7 @@
 
       var ctlLayers;
       var objBasemaps;
-      var objOverlaysRiesgo;
-      var objOverlaysCntServ;
+      var groupedOverlays;
       var scale;
 
       // create custom icon
@@ -262,7 +261,7 @@
               },
           }).addTo (map);
 
-          objOverlays = {
+          groupedOverlays = {
             "Riesgos": {
               "Erosión costera a 30 años": lyr30yrCoastalEro,
               "Aumento del nivel del mar 3ft": lyrSLR3ft,
@@ -279,7 +278,7 @@
             },
           };
 
-          L.control.groupedLayers(objBasemaps, objOverlays).addTo(map);
+          ctlLayers = L.control.groupedLayers(objBasemaps, groupedOverlays).addTo(map);
           scale = L.control.scale().addTo(map);
 
 
