@@ -171,11 +171,17 @@
           "opacity": 0.65
           };
 
-          //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
-          map = L.map('map',{
-              center: [18.253579, -66.378914],
-              zoom: 10,
-          });
+      //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
+      map = L.map('map',{
+          center: [18.253579, -66.378914],
+          zoom: 10,
+          maxBounds: [
+          //south west
+          [18.253579, -66.378914],
+          //north east
+          //[40.774, -74.125]
+          ],
+      });
           //  create basemaps, one satellite image, one base
           lyrCarto = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
