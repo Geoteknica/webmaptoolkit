@@ -173,14 +173,14 @@
 
       //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
       map = L.map('map',{
-          minZoom: 16
+          minZoom: 10
           maxBounds: [
           //south west
           [17.74140,-68.14912],
           //north east
           [18.52795,-65.06509]
           ],
-      }).setView([18.253579, -66.378914],10);
+      }).setView([18.253579, -66.378914],17);
 
           //  create basemaps, one satellite image, one base
           lyrCarto = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
