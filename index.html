@@ -173,7 +173,8 @@
 
       //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
       map = L.map('map',{
-          //minZoom: 10
+          maxZoom: 21,
+          minZoom: 10,
           maxBounds: [
           //south west
           [17.74140,-68.14912],
