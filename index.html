@@ -203,130 +203,206 @@
          "Imagen aérea": lyrMapbox
       };
 
-          lyr30yrCoastalEro = L.geoJSON.ajax('data/30yrcoastero.geojson',{
-              style: function (feature) {
-                return {color: "#00FFFF"};
-              },
-              onEachFeature: function (feature, layer) {
-                layer.bindPopup("Erosión costera a 30 años");
-              }
-          });
+      //Añadir los riesgos
+      lyr30yrCoastalEro = L.geoJSON.ajax('data/30yrcoastero.geojson',{
+          style: function (feature) {
+            return {color: "#00FFFF"};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Erosión costera a 30 años");
+          }
+      });
 
-          lyrSLR3ft = L.geoJSON.ajax('data/slr3ftinland.geojson',{
-              style: function (feature) {
-              return {};
-              },
-              onEachFeature: function (feature, layer) {
-              layer.bindPopup("Aumento del nivel del mar 3ft");
-              }
-          });
+      lyrSLR3ft = L.geoJSON.ajax('data/slr3ftinland.geojson',{
+          style: function (feature) {
+          return {};
+          },
+          onEachFeature: function (feature, layer) {
+          layer.bindPopup("Aumento del nivel del mar 3ft");
+          }
+      });
+      //Añade capas de inundación desagregadas
+      lyrVE = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación VE");
+          }
+      });
+      lyrAE = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      lyrAEFldwy = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      lyrCoastA = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      lyrCoastAFldwy = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      lyrAFldwy = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      lyrAoeste = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      lyrAcntr = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      lyrAeste = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      lyrAO = L.geoJSON.ajax('data/fldhazdiss.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación");
+          }
+      });
+      //agrupa las capas de inundación en un Layer Group
+      var lyrFlood = L.layerGroup([lyrVE, lyrAE, lyrAEFldwy, lyrCoastA, lyrCoastAFldwy, lyrAFldwy, lyrAoeste, lyrAcntr, lyrAeste, lyrAO]);
 
-          lyrFlood = L.geoJSON.ajax('data/fldhazdiss.geojson',{
-              style: function (feature) {
-                return {};
-              },
-              onEachFeature: function (feature, layer) {
-                layer.bindPopup("Inundación");
-              }
-          });
 
+      //añadir los sectores
+      lyrSectores = L.geoJSON.ajax('data/sectores.geojson',{
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {icon: imgcasa});
+          },
+      });
 
-          lyrSectores = L.geoJSON.ajax('data/sectores.geojson',{
-              pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {icon: imgcasa});
-              },
-          });
+      //add layers Centros de servicios then combine into LayerGroup
+      lyrColmados = L.geoJSON.ajax('data/colmados.geojson',{
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {icon: imgcolmado});
+          },
+          onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.COMPANY_NAME);
+          }
+      });
+      bufColmados = L.geoJSON.ajax('data/buff_colmados.geojson',{
+          style: function (feature) {
+            return {};
+          },
+      });
+      var Colmados = L.layerGroup([lyrColmados,bufColmados]);
 
-          //add layers Centros de servicios then combine into LayerGroup
-          lyrColmados = L.geoJSON.ajax('data/colmados.geojson',{
-              pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {icon: imgcolmado});
-              },
-              onEachFeature: function (feature, layer) {
-              layer.bindPopup(feature.properties.COMPANY_NAME);
-              }
-          });
-          bufColmados = L.geoJSON.ajax('data/buff_colmados.geojson',{
-              style: function (feature) {
-                return {};
-              },
-          });
-          var Colmados = L.layerGroup([lyrColmados,bufColmados]);
+      lyrFarmacias = L.geoJSON.ajax('data/farmacias.geojson',{
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {icon: imgfarmacia});
+          },
+          onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.COMPANY_NAME);
+          }
+      });
+      bufFarmacias = L.geoJSON.ajax('data/buff_farmacias.geojson',{
+          style: function (feature) {
+            return {};
+          },
+      });
+      var Farmacias = L.layerGroup([lyrFarmacias,bufFarmacias]);
 
-          lyrFarmacias = L.geoJSON.ajax('data/farmacias.geojson',{
-              pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {icon: imgfarmacia});
-              },
-              onEachFeature: function (feature, layer) {
-              layer.bindPopup(feature.properties.COMPANY_NAME);
-              }
-          });
-          bufFarmacias = L.geoJSON.ajax('data/buff_farmacias.geojson',{
-              style: function (feature) {
-                return {};
-              },
-          });
-          var Farmacias = L.layerGroup([lyrFarmacias,bufFarmacias]);
+      lyrInsreligiosa = L.geoJSON.ajax('data/instreligiosa.geojson',{
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {icon: imginstreligiosa});
+          },
+          onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.COMPANY_NAME);
+          }
+      });
+      bufInsreligiosa = L.geoJSON.ajax('data/buff_instreligiosa.geojson',{
+          style: function (feature) {
+            return {};
+          },
+      });
+      var Instreligiosas = L.layerGroup([lyrInsreligiosa,bufInsreligiosa]);
 
-          lyrInsreligiosa = L.geoJSON.ajax('data/instreligiosa.geojson',{
-              pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {icon: imginstreligiosa});
-              },
-              onEachFeature: function (feature, layer) {
-              layer.bindPopup(feature.properties.COMPANY_NAME);
-              }
-          });
-          bufInsreligiosa = L.geoJSON.ajax('data/buff_instreligiosa.geojson',{
-              style: function (feature) {
-                return {};
-              },
-          });
-          var Instreligiosas = L.layerGroup([lyrInsreligiosa,bufInsreligiosa]);
+      lyrRefugios = L.geoJSON.ajax('data/refugios_aemead.geojson',{
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {icon: imgrefugios});
+          },
+          onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.NOMBRE);
+          }
+      });
+      bufRefugios = L.geoJSON.ajax('data/buff_refugios.geojson',{
+          style: function (feature) {
+            return {};
+          },
+      });
+      var Refugios = L.layerGroup([lyrRefugios,bufRefugios]);
 
-          lyrRefugios = L.geoJSON.ajax('data/refugios_aemead.geojson',{
-              pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {icon: imgrefugios});
-              },
-              onEachFeature: function (feature, layer) {
-              layer.bindPopup(feature.properties.NOMBRE);
-              }
-          });
-          bufRefugios = L.geoJSON.ajax('data/buff_refugios.geojson',{
-              style: function (feature) {
-                return {};
-              },
-          });
-          var Refugios = L.layerGroup([lyrRefugios,bufRefugios]);
+      lyrHospitales = L.geoJSON.ajax('data/hospitales.geojson',{
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {icon: imghospital});
+          },
+          onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.NOMBRE);
+          }
+      });
+      bufHospitales = L.geoJSON.ajax('data/buff_hospitales.geojson',{
+          style: function (feature) {
+            return {};
+          },
+      });
+      var Hospitales = L.layerGroup([lyrHospitales,bufHospitales]);
 
-          lyrHospitales = L.geoJSON.ajax('data/hospitales.geojson',{
-              pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {icon: imghospital});
-              },
-              onEachFeature: function (feature, layer) {
-              layer.bindPopup(feature.properties.NOMBRE);
-              }
-          });
-          bufHospitales = L.geoJSON.ajax('data/buff_hospitales.geojson',{
-              style: function (feature) {
-                return {};
-              },
-          });
-          var Hospitales = L.layerGroup([lyrHospitales,bufHospitales]);
-
-          lyrCntresiliencia = L.geoJSON.ajax('data/cnts_resiliencia.geojson',{
-              pointToLayer: function(feature, latlng) {
-                return L.marker(latlng, {icon: imgcntresiliencia});
-              },
-              onEachFeature: function (feature, layer) {
-              layer.bindPopup(feature.properties.Organizati);
-              }
-          });
-          bufCntresiliencia = L.geoJSON.ajax('data/buff_cnts_resiliencia.geojson',{
-              style: function (feature) {
-                return {};
-              },
-          });
-          var CntsResiliencia = L.layerGroup([lyrCntresiliencia,bufCntresiliencia]).addTo (map);
+      lyrCntresiliencia = L.geoJSON.ajax('data/cnts_resiliencia.geojson',{
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {icon: imgcntresiliencia});
+          },
+          onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.Organizati);
+          }
+      });
+      bufCntresiliencia = L.geoJSON.ajax('data/buff_cnts_resiliencia.geojson',{
+          style: function (feature) {
+            return {};
+          },
+      });
+      var CntsResiliencia = L.layerGroup([lyrCntresiliencia,bufCntresiliencia]).addTo (map);
 
 
            //Overlay grouped layers
