@@ -169,21 +169,21 @@
           popupAnchor: [0,-15] // point from which the popup should open relative to the iconAnchor
           });
 
-          //Styles para las capas de poligonos
+      //Styles para las capas de poligonos
       var stSlr3ft = {
           "color": "#00FFFF",
-          "weight": 1,
+          "weight": 0,
           "opacity": 0.65
       };
       var stCoastEro = {
           "color": "#fff233",
           "weight": 3,
-          "opacity": 0.20
+          "opacity": 0.60
       };
       var stfldhazVE = {
-              "color": "#9e0142",
-              "weight": 5,
-              "opacity": 0.20
+          "color": "#9e0142",
+          "weight": 5,
+          "opacity": 0.20
       };
       var stfldhazCoastA = {
           "color": "#00FFFF",
@@ -191,9 +191,9 @@
           "opacity": 0.65
       };
       var stfldhazCoastAFldwy = {
-              "color": "#00FFFF",
-              "weight": 5,
-              "opacity": 0.65
+          "color": "#00FFFF",
+          "weight": 5,
+          "opacity": 0.65
       };
       var stfldhazAE = {
           "color": "#00FFFF",
@@ -201,9 +201,9 @@
           "opacity": 0.65
       };
       var stfldhazAEFldwy = {
-              "color": "#00FFFF",
-              "weight": 5,
-              "opacity": 0.65
+          "color": "#00FFFF",
+          "weight": 5,
+          "opacity": 0.65
       };
       var stfldhazAO = {
           "color": "#00FFFF",
@@ -211,14 +211,14 @@
           "opacity": 0.65
       };
       var stfldhazA = {
-              "color": "#00FFFF",
-              "weight": 5,
-              "opacity": 0.65
+          "color": "#00FFFF",
+          "weight": 5,
+          "opacity": 0.65
       };
       var stfldhazAFldwy = {
-              "color": "#00FFFF",
-              "weight": 5,
-              "opacity": 0.65
+          "color": "#00FFFF",
+          "weight": 5,
+          "opacity": 0.65
       };
 
       //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
@@ -268,163 +268,123 @@
       //Añadir los riesgos
       lyr30yrCoastalEro = L.geoJSON.ajax('data/30yrcoastero.geojson',{
           style: stCoastEro,
-
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Erosión costera a 30 años");
           }
       });
 
-
       lyrSLR3ft = L.geoJSON.ajax('data/slr3ftinland.geojson',{
-          style: function (feature) {
-          return {};
-          },
+          style: stSlr3ft,
           onEachFeature: function (feature, layer) {
           layer.bindPopup("Aumento del nivel del mar 3ft");
           }
       });
       //Añade capas de inundación desagregadas
       lyrVE = L.geoJSON.ajax('data/FldhazVE.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazVE,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación VE");
           }
       });
       lyrAEoeste = L.geoJSON.ajax('data/FldhazAEoeste.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazAE,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación AE");
           }
       });
       lyrAEeste = L.geoJSON.ajax('data/FldhazAEeste.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazAE,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación AE");
           }
       });
       lyrAEcent1 = L.geoJSON.ajax('data/FldhazAEcent1.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazAE,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación AE");
           }
       });
       lyrAEcent2 = L.geoJSON.ajax('data/FldhazAEcent2.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazAE,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación AE");
           }
       });
       lyrAEFldwy = L.geoJSON.ajax('data/FldhazAEFldwy.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazAEFldwy,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación AE Cauce Mayor");
           }
       });
       lyrCoastA = L.geoJSON.ajax('data/FldhazCoastA.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazCoastA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A Costera");
           }
       });
       lyrCoastAFldwy = L.geoJSON.ajax('data/FldhazCoastAFldwy.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazCoastAFldwy,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A Costera Cauce Mayor");
           }
       });
       lyrAFldwy = L.geoJSON.ajax('data/FldhazAFldwy.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazAFldwy,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A Cauce Mayor");
           }
       });
       lyrAoeste1 = L.geoJSON.ajax('data/FldhazAoeste1.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A");
           }
       });
       lyrAoeste2 = L.geoJSON.ajax('data/FldhazAoeste2.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A");
           }
       });
       lyrAeste1 = L.geoJSON.ajax('data/FldhazAeste1.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A");
           }
       });
       lyrAeste2 = L.geoJSON.ajax('data/FldhazAeste2.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A");
           }
       });
       lyrAcent1 = L.geoJSON.ajax('data/FldhazAcent1.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A");
           }
       });
       lyrAcent2 = L.geoJSON.ajax('data/FldhazAcent2.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A");
           }
       });
       lyrAcent3 = L.geoJSON.ajax('data/FldhazAcent3.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A");
           }
       });
       lyrAcent4 = L.geoJSON.ajax('data/FldhazAcent4.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazA,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación A");
           }
       });
 
       lyrAO = L.geoJSON.ajax('data/FldhazAO.geojson',{
-          style: function (feature) {
-            return {};
-          },
+          style: stfldhazAO,
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Inundación AO");
           }
