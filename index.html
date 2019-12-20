@@ -230,7 +230,31 @@
             layer.bindPopup("Inundación VE");
           }
       });
-      lyrAE = L.geoJSON.ajax('data/FldhazAE.geojson',{
+      lyrAEoeste = L.geoJSON.ajax('data/FldhazAEoeste.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación AE");
+          }
+      });
+      lyrAEeste = L.geoJSON.ajax('data/FldhazAEeste.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación AE");
+          }
+      });
+      lyrAEcent1 = L.geoJSON.ajax('data/FldhazAEcent1.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación AE");
+          }
+      });
+      lyrAEcent2 = L.geoJSON.ajax('data/FldhazAEcent2.geojson',{
           style: function (feature) {
             return {};
           },
@@ -270,7 +294,7 @@
             layer.bindPopup("Inundación A Cauce Mayor");
           }
       });
-      lyrAoeste = L.geoJSON.ajax('data/FldhazAoeste.geojson',{
+      lyrAoeste1 = L.geoJSON.ajax('data/FldhazAoeste1.geojson',{
           style: function (feature) {
             return {};
           },
@@ -278,7 +302,7 @@
             layer.bindPopup("Inundación A");
           }
       });
-      lyrAcntr = L.geoJSON.ajax('data/FldhazAcntr.geojson',{
+      lyrAoeste2 = L.geoJSON.ajax('data/FldhazAoeste2.geojson',{
           style: function (feature) {
             return {};
           },
@@ -286,7 +310,7 @@
             layer.bindPopup("Inundación A");
           }
       });
-      lyrAeste = L.geoJSON.ajax('data/FldhazAeste.geojson',{
+      lyrAeste1 = L.geoJSON.ajax('data/FldhazAeste1.geojson',{
           style: function (feature) {
             return {};
           },
@@ -294,6 +318,47 @@
             layer.bindPopup("Inundación A");
           }
       });
+      lyrAeste2 = L.geoJSON.ajax('data/FldhazAeste2.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación A");
+          }
+      });
+      lyrAcent1 = L.geoJSON.ajax('data/FldhazAcent1.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación A");
+          }
+      });
+      lyrAcent2 = L.geoJSON.ajax('data/FldhazAcent2.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación A");
+          }
+      });
+      lyrAcent3 = L.geoJSON.ajax('data/FldhazAcent3.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación A");
+          }
+      });
+      lyrAcent4 = L.geoJSON.ajax('data/FldhazAcent4.geojson',{
+          style: function (feature) {
+            return {};
+          },
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Inundación A");
+          }
+      });
+
       lyrAO = L.geoJSON.ajax('data/FldhazAO.geojson',{
           style: function (feature) {
             return {};
@@ -303,7 +368,7 @@
           }
       });
       //agrupa las capas de inundación en un Layer Group
-      var lyrFlood = L.layerGroup([lyrVE, lyrAE, lyrAEFldwy, lyrCoastA, lyrCoastAFldwy, lyrAFldwy, lyrAoeste, lyrAcntr, lyrAeste, lyrAO]);
+      var lyrFlood = L.layerGroup([lyrVE, lyrAEoeste, lyrAEeste, lyrAEcent1, lyrAEcent2, lyrAEFldwy, lyrCoastA, lyrCoastAFldwy, lyrAFldwy, lyrAoeste, lyrAeste, lyrAcent1, lyrAcent2, lyrAcent3, lyrAcent4, lyrAO]);
 
 
       //añadir los sectores
