@@ -194,7 +194,7 @@
               "color": "#00FFFF",
               "weight": 5,
               "opacity": 0.65
-      }
+      };
       var stfldhazAE = {
           "color": "#00FFFF",
           "weight": 5,
@@ -274,9 +274,7 @@
             layer.bindPopup("Erosión costera a 30 años");
           }
       });
-      L.geoJSON(lyr30yrCoastalEro, {
-        style: stCoastEro
-      });
+
 
       lyrSLR3ft = L.geoJSON.ajax('data/slr3ftinland.geojson',{
           style: function (feature) {
