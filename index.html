@@ -267,7 +267,7 @@
 
       //Añadir los riesgos
       lyr30yrCoastalEro = L.geoJSON.ajax('data/30yrcoastero.geojson',{
-          style: stCoastEro),
+          style: stCoastEro,
 
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Erosión costera a 30 años");
