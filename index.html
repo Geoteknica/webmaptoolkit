@@ -444,7 +444,7 @@
       });
       bufColmados = L.geoJSON.ajax('data/buff_colmados.geojson',{
           style: stColmados
-      });
+          });
       var Colmados = L.layerGroup([lyrColmados,bufColmados]);
 
       lyrFarmacias = L.geoJSON.ajax('data/farmacias.geojson',{
@@ -457,8 +457,7 @@
       });
       bufFarmacias = L.geoJSON.ajax('data/buff_farmacias.geojson',{
         style: stFarmacias
-        }
-      });
+        });
       var Farmacias = L.layerGroup([lyrFarmacias,bufFarmacias]);
 
       lyrInsreligiosa = L.geoJSON.ajax('data/instreligiosa.geojson',{
@@ -471,8 +470,7 @@
       });
       bufInsreligiosa = L.geoJSON.ajax('data/buff_instreligiosa.geojson',{
         style: stInstRelig
-        }
-      });
+        });
       var Instreligiosas = L.layerGroup([lyrInsreligiosa,bufInsreligiosa]);
 
       lyrRefugios = L.geoJSON.ajax('data/refugios_aemead.geojson',{
@@ -485,8 +483,7 @@
       });
       bufRefugios = L.geoJSON.ajax('data/buff_refugios.geojson',{
         style: stRefugio
-        }
-      });
+        });
       var Refugios = L.layerGroup([lyrRefugios,bufRefugios]);
 
       lyrHospitales = L.geoJSON.ajax('data/hospitales.geojson',{
@@ -499,8 +496,7 @@
       });
       bufHospitales = L.geoJSON.ajax('data/buff_hospitales.geojson',{
         style: stHospital
-        }
-      });
+        });
       var Hospitales = L.layerGroup([lyrHospitales,bufHospitales]);
 
       lyrCntresiliencia = L.geoJSON.ajax('data/cnts_resiliencia.geojson',{
@@ -513,8 +509,7 @@
       });
       bufCntresiliencia = L.geoJSON.ajax('data/buff_cnts_resiliencia.geojson',{
         style: stCntRes
-        }
-      });
+        });
       var CntsResiliencia = L.layerGroup([lyrCntresiliencia,bufCntresiliencia]).addTo (map);
 
 
