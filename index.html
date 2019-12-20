@@ -194,7 +194,7 @@
               "color": "#00FFFF",
               "weight": 5,
               "opacity": 0.65
-      };
+      }
       var stfldhazAE = {
           "color": "#00FFFF",
           "weight": 5,
@@ -267,9 +267,8 @@
 
       //Añadir los riesgos
       lyr30yrCoastalEro = L.geoJSON.ajax('data/30yrcoastero.geojson',{
-          style: function (feature) {
-            return {color: "#00FFFF"};
-          },
+          style: stCoastEro),
+
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Erosión costera a 30 años");
           }
