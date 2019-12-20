@@ -51,6 +51,9 @@
     <!-- Load Font Awesome icons -->
       <script src="https://use.fontawesome.com/a64989e3a8.js"></script>
 
+    <!-- Load Leaflet locate -->
+    <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
+    <script src="src/L.Control.Locate.js"></script>
 
     <!-- set width and height styles for map -->
     <style>
@@ -182,6 +185,13 @@
             [18.52795,-65.06509]
           ],
       }).setView([18.253579, -66.378914],10);
+
+      var lc = L.control.locate({
+          position: 'topright',
+          strings: {
+              title: "Localízame"
+          }
+      }).addTo(map);
 
       //  create basemaps, one satellite image, one base
       lyrCarto = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
