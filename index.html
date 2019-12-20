@@ -76,7 +76,7 @@
 
   <h3>Herramienta de mapa</h3>
 
-  <h4>Esta herramienta permite localizar al usuario y a la vez muestra los riesgos y centros de servicio cercanos</em></h4>
+  <h4>Esta herramienta permite localizar al usuario a la vez muestra los riesgos y centros de servicio cercanos</em></h4>
     <!-- place holder for map -->
     <div id="map"></div>
     <script>
@@ -519,7 +519,7 @@
           //add scale bar to map
           scale = L.control.scale().addTo(map);
 
-
+          leafletMap.attributionControl.addAttribution("New attribution");
           //add search control to layer sectores
           /*var searchControl = new L.Control.Search({
           		layer: lyrSectores,
