@@ -189,12 +189,12 @@
       var lc = L.control.locate({
           position: 'topleft',
           strings: {
-              title: "Localízame"
+              title: "Localízame",
+              popup: "Usted está en esta área"
           },
           locateOptions: {
                enableHighAccuracy: true
-          },
-          popup: "Usted está en esta área"
+          }          
       }).addTo(map);
 
       //  create basemaps, one satellite image, one base
