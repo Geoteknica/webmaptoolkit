@@ -519,24 +519,24 @@
 
 
            //Overlay grouped layers
-          groupedOverlays = {
-            "Riesgos": {
-              "Erosión costera a 30 años": lyr30yrCoastalEro,
-              "Aumento del nivel del mar 3ft": lyrSLR3ft,
-              "Áreas inundables": lyrFlood
-            },
-            "Sectores": {
-              "<img src='img/houses.svg'height=18> Comunidades": lyrSectores
-            },
-            "Centros de servicio": {
-              "<img src='img/shop.svg'height=18> Colmados": Colmados,
-              "<img src='img/medicine.svg'height=18> Farmacias": Farmacias,
-              "<img src='img/church.svg'height=18> Instituciones religiosas": Instreligiosas,
-              "<img src='img/refugio.svg'height=18> Refugios": Refugios,
-              "<img src='img/hospital.svg'height=18> Hospitales": Hospitales,
-              "<img src='img/shelter.svg'height=18> Centros de Resiliencia": CntsResiliencia
-            }
-          };
+      groupedOverlays = {
+        "Riesgos": {
+          "Erosión costera a 30 años": lyr30yrCoastalEro,
+          "Aumento del nivel del mar 3ft": lyrSLR3ft,
+          "Áreas inundables": lyrFlood
+        },
+        "Sectores": {
+          "<img src='img/houses.svg'height=18> Comunidades": lyrSectores
+        },
+        "Centros de servicio": {
+          "<img src='img/shop.svg'height=18> Colmados": Colmados,
+          "<img src='img/medicine.svg'height=18> Farmacias": Farmacias,
+          "<img src='img/church.svg'height=18> Instituciones religiosas": Instreligiosas,
+          "<img src='img/refugio.svg'height=18> Refugios": Refugios,
+          "<img src='img/hospital.svg'height=18> Hospitales": Hospitales,
+          "<img src='img/shelter.svg'height=18> Centros de Resiliencia": CntsResiliencia
+        }
+        };
 
           //ctlLayers = L.control.groupedLayers(objBasemaps, groupedOverlays).addTo(map);
           L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
@@ -544,7 +544,7 @@
           //add scale bar to map
           scale = L.control.scale().addTo(map);
 
-          map.attributionControl.addAttribution("Junta de Planificación, FEMA, NOAA, USADATA");
+          map.attributionControl.addAttribution("Junta de Planificación, PLN, FEMA, NOAA, USADATA");
 
 
 
