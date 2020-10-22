@@ -50,6 +50,7 @@
 
     <!-- Load Font Awesome icons -->
       <script src="https://use.fontawesome.com/a64989e3a8.js"></script>
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
     <!-- Load Leaflet locate -->
     <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
@@ -279,10 +280,8 @@
       }).setView([18.253579, -66.378914],10);
 
       //info y disclaimer button
-      var helloPopup = L.popup().setContent('Hello World!');
-
-      L.easyButton('', function(btn, map){
-          helloPopup.setLatLng(map.getCenter()).openOn(map);
+      L.easyButton('fa-crosshairs fa-lg', function(btn, map){
+          alert('info')
       }).addTo(map);
 
 
