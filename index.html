@@ -55,6 +55,10 @@
     <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
     <script src="src/L.Control.Locate.min.js"></script>
 
+    <!-- Load EasyButton -- >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
     <!-- set width and height styles for map -->
     <style>
         body {
@@ -63,15 +67,15 @@
         }
 
         html,body,#map {
-    	    width: 100%;
-          height: 100%;
+          height: 93%;
+          width: 100%;
         }
 
         h1 {
-            text-align: center;
-            text-transform: uppercase;
-            color: white;
-            }
+          text-align: center;
+          text-transform: uppercase;
+          color: white;
+        }
 
 
     </style>
@@ -273,6 +277,14 @@
             [18.52795,-65.06509]
           ],
       }).setView([18.253579, -66.378914],10);
+
+      //info y disclaimer button
+      var helloPopup = L.popup().setContent('Hello World!');
+
+      L.easyButton('', function(btn, map){
+          helloPopup.setLatLng(map.getCenter()).openOn(map);
+      }).addTo(map);
+
 
       //locate user button
       var lc = L.control.locate({
