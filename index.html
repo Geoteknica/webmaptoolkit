@@ -24,41 +24,28 @@
     <!-- reference to ajax -->
     <script src="src/leaflet.ajax.min.js"></script>
 
-    <!-- Load Esri Leaflet from CDN -->
-     <script src="https://unpkg.com/esri-leaflet@2.3.0/dist/esri-leaflet.js"
-     integrity="sha512-1tScwpjXwwnm6tTva0l0/ZgM3rYNbdyMj5q6RSQMbNX6EUMhYDE3pMRGZaT41zHEvLoWEK7qFEJmZDOoDMU7/Q=="
-     crossorigin=""></script>
-
-
-     <!-- Load Esri Leaflet Geocoder from CDN -->
-
-      <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.14/dist/esri-leaflet-geocoder.css"
-      integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ=="
-      crossorigin="">
-      <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.14/dist/esri-leaflet-geocoder.js"
-      integrity="sha512-uK5jVwR81KVTGe8KpJa1QIN4n60TsSV8+DPbL5wWlYQvb0/nYNgSOg9dZG6ViQhwx/gaMszuWllTemL+K+IXjg=="
-      crossorigin=""></script>
-
     <!-- Load Leaflet search para buscar sectores en la capa -->
-      <link rel="stylesheet" href="src/leaflet-search.src.css"/>
-      <script src="src/leaflet-search.src.js"></script>
+    <link rel="stylesheet" href="src/leaflet-search.src.css"/>
+    <script src="src/leaflet-search.src.js"></script>
 
 
     <!-- Load Grouped Layer Control -->
-      <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
-      <script src="src/leaflet.groupedlayercontrol.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
+    <script src="src/leaflet.groupedlayercontrol.min.js" type="text/javascript"></script>
 
     <!-- Load Font Awesome icons -->
-      <script src="https://use.fontawesome.com/a64989e3a8.js"></script>
-      <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/05f8f33024.js" crossorigin="anonymous"></script>
+
 
     <!-- Load Leaflet locate -->
     <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
     <script src="src/L.Control.Locate.min.js"></script>
 
-    <!-- Load EasyButton -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
     <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+    <link rel="stylesheet" href="src/L.Control.ZoomMin.css" media="screen">
+    <script src="src/L.Control.ZoomMin.js"></script>
 
     <!-- set width and height styles for map -->
     <style>
@@ -277,17 +264,23 @@
             //north east
             [18.52795,-65.06509]
           ],
-      }).setView([18.253579, -66.378914],10);
+          }).setView([18.253579, -66.378914],10);
+
+      map.addControl(new L.control.ZoomMin())
+
 
       //info y disclaimer button
-
+      L.easyButton('<i class="fa fa-undo-alt"></i>', function(btn, map){
+        var puertorico = ([18.2476115342,-66.486511230]);
+        map.setView(puertorico);
+      }).addTo(map);
 
       //locate user button
       var lc = L.control.locate({
           position: 'topleft',
           strings: {
-              title: "Localízame",
-              popup: "Usted está en esta área"
+          title: "Localízame",
+          popup: "Usted está en esta área"
           },
           locateOptions: {
                enableHighAccuracy: true
@@ -549,13 +542,13 @@
         }
         };
 
-          //ctlLayers = L.control.groupedLayers(objBasemaps, groupedOverlays).addTo(map);
-          L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+        //ctlLayers = L.control.groupedLayers(objBasemaps, groupedOverlays).addTo(map);
+        L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
 
-          //add scale bar to map
-          scale = L.control.scale().addTo(map);
+        //add scale bar to map
+        scale = L.control.scale().addTo(map);
 
-          map.attributionControl.addAttribution("Junta de Planificación, PLN, FEMA, NOAA, USADATA");
+        map.attributionControl.addAttribution("Junta de Planificación, PLN, FEMA, NOAA, USADATA");
 
 
 
