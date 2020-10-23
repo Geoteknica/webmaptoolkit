@@ -130,7 +130,7 @@
 
       // create custom icon
       var imgcasa = L.icon({
-          iconUrl: 'img/houses.svg',
+          iconUrl: '<i class="fa fa-home" aria-hidden="true"></i>',
           iconSize: [5, 10], // size of the icon
           popupAnchor: [0,-15] // point from which the popup should open relative to the iconAnchor
           });
@@ -283,7 +283,7 @@
 
       //pasos button
       L.easyButton('<i class="fa fa-list-ol" aria-hidden="true"></i>', function(){
-        alert('paso 1. encienda su localizador, eso le ayudará a identificar su ubicacion en relacion a los riesgos y a los centros de servicios \npaso 2. Si su posición fue localizada correctamente, puede ir a la leyenda (botón a la derecha) \npaso 3. Ahora puede ver si hay riesgos en su área prendiendo y apagando los riesgos. Además puede ver otra información como Farmacias y Colmados si desea. Los centros de servicios además de su localización muestran un área de 500 metros alrededor del local como distancia accesible, esto varía y no es un criterio aplicable en todos los casos.');
+        alert('paso 1. Oprima el botón "Localízame" para hayar su posición, eso le ayudará a identificar su ubicacion en relacion a los riesgos y a los centros de servicios \npaso 2. Si su posición fue localizada correctamente, puede ir a la leyenda (botón a la derecha) \npaso 3. Ahora puede ver si hay riesgos en su área prendiendo y apagando los riesgos. Además puede ver otra información como Farmacias y Colmados si desea. Los centros de servicios además de su localización muestran un área de 500 metros alrededor del local como distancia accesible, esto varía y no es un criterio aplicable en todos los casos.');
       }, 'pasos sugeridos').addTo(map);
 
       //info button
@@ -538,7 +538,7 @@
           "Áreas inundables": lyrFlood
         },
         "Sectores": {
-          "<img src='img/houses.svg'height=18> Comunidades": lyrSectores
+          "<figure='<img src='img/houses.svg'height=18>'> Comunidades": lyrSectores
         },
         "Centros de servicio": {
           "<img src='img/shop.svg'height=18> Colmados": Colmados,
