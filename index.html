@@ -266,13 +266,12 @@
           ],
           }).setView([18.253579, -66.378914],10);
 
-      map.addControl(new L.Control.ZoomMin())
+      //map.addControl(new L.Control.ZoomMin())
 
 
       //info y disclaimer button
-      L.easyButton('<i class="fa fa-undo-alt"></i>', function(btn, map){
-        var puertorico = ([18.2476115342,-66.486511230]);
-        map.setView(puertorico);
+      L.easyButton('<i class="fa fa-undo-alt"></i>', function(){
+        map.flyTo([18.253579, -66.378914],10);
       }).addTo(map);
 
       //locate user button
