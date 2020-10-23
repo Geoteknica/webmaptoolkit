@@ -283,12 +283,12 @@
 
       //pasos button
       L.easyButton('<i class="fa fa-list-ol" aria-hidden="true"></i>', function(){
-        alert('paso 1. encienda su localizador, eso le ayudará a identificar su ubicacion en relacion a los riesgos y a los centros de servicios');
+        alert('paso 1. encienda su localizador, eso le ayudará a identificar su ubicacion en relacion a los riesgos y a los centros de servicios \npaso 2. Si su posición fue localizada correctamente, puede ir a la leyenda (botón a la derecha) \npaso 3. Ahora puede ver si hay riesgos en su área prendiendo y apagando los riesgos. Además puede ver otra información como Farmacias y Colmados si desea. Los centros de servicios además de su localización muestran un área de 500 metros alrededor del local como distancia accesible, esto varía y no es un criterio aplicable en todos los casos.');
       }, 'pasos sugeridos').addTo(map);
 
       //info button
       L.easyButton('<i class="fa fa-info-circle" aria-hidden="true"></i>', function(){
-        alert('Relevo de responsabilidad:Los datos y mapas presentados aquí se proveen "tal cual", sin garantía de su rendimiento, comerciabilidad o idoneidad para ningún propósito en particular. Cualquier riesgo asociado con los resultados y el manejo de estos datos es asumido por el usuario. Este visualizador debe utilizarse estrictamente como una herramienta de referencia para la planificación y no para la navegación, la obtención de permisos u otros fines legales.');
+        alert('Relevo de responsabilidad: Los datos y mapas presentados aquí se proveen "tal cual", sin garantía de su rendimiento, comerciabilidad o idoneidad para ningún propósito en particular. Cualquier riesgo asociado con los resultados y el manejo de estos datos es asumido por el usuario. Este visualizador debe utilizarse estrictamente como una herramienta de referencia para la planificación y no para la navegación, la obtención de permisos u otros fines legales.');
       }, 'info').addTo(map);
 
 
@@ -309,7 +309,7 @@
           'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           id: 'mapbox.streets-satellite'
       });
-
+      //Group Layers into baselayers
       baseLayers = {
          "Mapa base": lyrCarto,
          "Imagen aérea": lyrMapbox
