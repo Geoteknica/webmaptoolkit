@@ -44,8 +44,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
     <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
-    <link rel="stylesheet" href="src/L.Control.ZoomMin.css" media="screen">
-    <script src="src/L.Control.ZoomMin.js"></script>
 
     <!-- set width and height styles for map -->
     <style>
@@ -72,7 +70,7 @@
 
 <body>
 
-  <h1 style="background-color:#C52636;font-family:Verdana, Geneva, sans-serif;"><a href="https://www.estudiostecnicos.com/es/"><img src="img/Copy-of-Logo-ETI-transparente.png" alt="Logo ETI" style="width:55px;height:25px;"></a>Herramienta de mapa</h1>
+  <h1 style="background-color:#C52636;font-family:Verdana, Geneva, sans-serif;"><a href="https://www.estudiostecnicos.com/es/"><img src="img/Copy-of-Logo-ETI-transparente.png" alt="Logo ETI" style="width:60px;height:30px;"></a>Herramienta de Mapa</h1>
 
   <h4>Esta herramienta permite localizar al usuario a la vez que muestra los riesgos y centros de servicio cercanos</em></h4>
 
@@ -266,10 +264,12 @@
           ],
           }).setView([18.253579, -66.378914],10);
 
-      //map.addControl(new L.Control.ZoomMin())
+      //info button
+      L.easyButton('<i class="fa fa-info-circle" aria-hidden="true"></i>', function(){
+        alert('Relevo de responsabilidad:Los datos y mapas presentados aquí se proveen "tal cual", sin garantía de su rendimiento, comerciabilidad o idoneidad para ningún propósito en particular. Cualquier riesgo asociado con los resultados y el manejo de estos datos es asumido por el usuario. Este visualizador debe utilizarse estrictamente como una herramienta de referencia para la planificación y no para la navegación, la obtención de permisos u otros fines legales.');
+      }).addTo(map);
 
-
-      //info y disclaimer button
+      //reset view button
       L.easyButton('<i class="fa fa-undo-alt"></i>', function(){
         map.flyTo([18.253579, -66.378914],10);
       }).addTo(map);
