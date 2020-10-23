@@ -258,21 +258,11 @@
           minZoom: 10,
           maxBounds: [
             //south west
-            [17.74140,-68.14912],
+            [17.8690,-67.3160],
             //north east
-            [18.52795,-65.06509]
+            [18.5603,-65.2203]
           ],
           }).setView([18.253579, -66.378914],10);
-
-      //info button
-      L.easyButton('<i class="fa fa-info-circle" aria-hidden="true"></i>', function(){
-        alert('Relevo de responsabilidad:Los datos y mapas presentados aquí se proveen "tal cual", sin garantía de su rendimiento, comerciabilidad o idoneidad para ningún propósito en particular. Cualquier riesgo asociado con los resultados y el manejo de estos datos es asumido por el usuario. Este visualizador debe utilizarse estrictamente como una herramienta de referencia para la planificación y no para la navegación, la obtención de permisos u otros fines legales.');
-      }).addTo(map);
-
-      //reset view button
-      L.easyButton('<i class="fa fa-undo-alt"></i>', function(){
-        map.flyTo([18.253579, -66.378914],10);
-      }).addTo(map);
 
       //locate user button
       var lc = L.control.locate({
@@ -285,6 +275,25 @@
                enableHighAccuracy: true
           }
       }).addTo(map);
+
+      //reset view button
+      L.easyButton('<i class="fa fa-undo-alt"></i>', function(){
+        map.flyTo([18.253579, -66.378914],10);
+      },'Volver a vista inicial').addTo(map);
+
+      //pasos button
+      L.easyButton('<i class="fa fa-list-ol" aria-hidden="true"></i>', function(){
+        alert('paso 1. encienda su localizador, eso le ayudará a identificar su ubicacion en relacion a los riesgos y a los centros de servicios');
+      }, 'pasos sugeridos').addTo(map);
+
+      //info button
+      L.easyButton('<i class="fa fa-info-circle" aria-hidden="true"></i>', function(){
+        alert('Relevo de responsabilidad:Los datos y mapas presentados aquí se proveen "tal cual", sin garantía de su rendimiento, comerciabilidad o idoneidad para ningún propósito en particular. Cualquier riesgo asociado con los resultados y el manejo de estos datos es asumido por el usuario. Este visualizador debe utilizarse estrictamente como una herramienta de referencia para la planificación y no para la navegación, la obtención de permisos u otros fines legales.');
+      }, 'info').addTo(map);
+
+
+
+
 
       //  create basemaps, one satellite image, one base
       lyrCarto = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
