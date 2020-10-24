@@ -57,7 +57,7 @@
           width: 100%;
         }
 
-        h1 {
+        h2 {
           text-align: center;
           text-transform: uppercase;
           color: white;
@@ -70,7 +70,7 @@
 
 <body>
 
-  <h1 style="background-color:#C52636;font-family:Verdana, Geneva, sans-serif;"><a href="https://www.estudiostecnicos.com/es/"><img src="img/Copy-of-Logo-ETI-transparente.png" alt="Logo ETI" style="width:60px;height:30px;"></a>Herramienta de Mapa</h1>
+  <h2 style="background-color:#C52636;font-family:Verdana, Geneva, sans-serif;"><a href="https://www.estudiostecnicos.com/es/"><img src="img/Copy-of-Logo-ETI-transparente.png" alt="Logo ETI" style="width:60px;height:30px;"></a>Herramienta para conocer los peligros naturales que podrían afectar a mi comunidad y los centros de servicios</h2>
 
   <h4>Esta herramienta permite localizar al usuario a la vez que muestra los riesgos y centros de servicio cercanos</em></h4>
 
@@ -129,8 +129,13 @@
       var scale;
 
       // create custom icon
+      var fontAwesomeIcon = L.divIcon({
+    	  html: '<i class="fa fa-map-marker fa-4x"></i>',
+    	  iconSize: [15, 25],
+    	  className: 'myDivIcon'
+    	});
       var imgcasa = L.icon({
-          iconUrl: '<i class="fa fa-home" aria-hidden="true"></i>',
+          iconUrl: 'img/houses.svg',
           iconSize: [5, 10], // size of the icon
           popupAnchor: [0,-15] // point from which the popup should open relative to the iconAnchor
           });
@@ -446,7 +451,7 @@
       //añadir los sectores
       lyrSectores = L.geoJSON.ajax('data/sectores.geojson',{
           pointToLayer: function(feature, latlng) {
-            return L.marker(latlng, {icon: imgcasa});
+            return L.marker(latlng, {icon: fontAwesomeIcon});
           },
       });
 
