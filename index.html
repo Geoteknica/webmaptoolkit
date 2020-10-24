@@ -129,11 +129,11 @@
       var scale;
 
       // create custom icon
-      var fontAwesomeIcon = L.divIcon({
-    	  html: '<i class="fa fa-map-marker fa-4x"></i>',
-    	  iconSize: [15, 25],
-    	  className: 'myDivIcon'
-    	});
+      var Iconcasa = L.divIcon({
+      	  html: '<i class="fa fa-home" aria-hidden="true"></i>',
+      	  iconSize: [15, 25],
+      	  className: 'myDivIcon'
+      	  });
       var imgcasa = L.icon({
           iconUrl: 'img/houses.svg',
           iconSize: [5, 10], // size of the icon
@@ -451,7 +451,7 @@
       //añadir los sectores
       lyrSectores = L.geoJSON.ajax('data/sectores.geojson',{
           pointToLayer: function(feature, latlng) {
-            return L.marker(latlng, {icon: fontAwesomeIcon});
+            return L.marker(latlng, {icon: Iconcasa});
           },
       });
 
@@ -543,7 +543,7 @@
           "Áreas inundables": lyrFlood
         },
         "Sectores": {
-          "<figure='<img src='img/houses.svg'height=18>'> Comunidades": lyrSectores
+          "<img src='img/houses.svg'height=18> Comunidades": lyrSectores
         },
         "Centros de servicio": {
           "<img src='img/shop.svg'height=18> Colmados": Colmados,
