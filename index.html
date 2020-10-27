@@ -61,8 +61,16 @@
           text-align: center;
           text-transform: uppercase;
           color: white;
+          padding: 5px;
+          margin-left: 0px;
         }
-
+        h4 {
+          text-align: left;
+          text-transform: none;
+          color: black;
+          padding: 0px;
+          margin-left: 10px;
+        }
 
     </style>
 
@@ -72,7 +80,7 @@
 
   <h2 style="background-color:#C52636;font-family:Verdana, Geneva, sans-serif;"><a href="https://www.estudiostecnicos.com/es/"><img src="img/Copy-of-Logo-ETI-transparente.png" alt="Logo ETI" style="width:60px;height:30px;"></a>Herramienta para conocer los peligros naturales que podrían afectar a mi comunidad y los centros de servicios</h2>
 
-  <h4>Esta herramienta permite localizar al usuario a la vez que muestra los riesgos y centros de servicio cercanos</em></h4>
+  <h4> <i class="far fa-lightbulb"></i> Esta herramienta permite localizar al usuario a la vez que muestra los riesgos y centros de servicio cercanos</em></h4>
 
 
   <!-- place holder for map -->
@@ -289,7 +297,7 @@
       //pasos button
       L.easyButton('<i class="fa fa-list-ol" aria-hidden="true"></i>', function(){
         alert('paso 1. Oprima el botón "Localízame" para hayar su posición, eso le ayudará a identificar su ubicacion en relacion a los riesgos y a los centros de servicios \npaso 2. Si su posición fue localizada correctamente, puede ir a la leyenda (botón a la derecha) \npaso 3. Ahora puede ver si hay riesgos en su área prendiendo y apagando los riesgos. Además puede ver otra información como Farmacias y Colmados si desea. Los centros de servicios además de su localización muestran un área de 500 metros alrededor del local como distancia accesible, esto varía y no es un criterio aplicable en todos los casos.');
-      }, 'pasos sugeridos').addTo(map);
+      }, 'Pasos sugeridos').addTo(map);
 
       //info button
       L.easyButton('<i class="fa fa-info-circle" aria-hidden="true"></i>', function(){
@@ -543,7 +551,7 @@
           "Áreas inundables": lyrFlood
         },
         "Sectores": {
-          "<img src='img/houses.svg'height=18> Comunidades": lyrSectores
+          "<img src=Iconcasa> Comunidades": lyrSectores
         },
         "Centros de servicio": {
           "<img src='img/shop.svg'height=18> Colmados": Colmados,
