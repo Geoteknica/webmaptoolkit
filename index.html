@@ -57,12 +57,33 @@
           width: 100%;
         }
 
+
+
+        .header img {
+          float: left;
+          width: 50px;
+          height: 50px;
+          background: none;
+
+        }
+        .header h2 {
+        float: left;
+        top: auto;
+        left: 10px;
+        background-color:#C52636;
+        font-family:Verdana, Geneva, sans-serif;
+        overflow: auto;
+        }
         h2 {
           text-align: center;
           text-transform: uppercase;
           color: white;
           padding: 5px;
           margin-left: 0px;
+          top: auto;
+          background-color:#C52636;
+          font-family:Verdana, Geneva, sans-serif;
+
         }
         h4 {
           text-align: left;
@@ -78,7 +99,10 @@
 
 <body>
 
-  <h2 style="background-color:#C52636;font-family:Verdana, Geneva, sans-serif;"><a href="https://www.estudiostecnicos.com/es/"><img src="img/Copy-of-Logo-ETI-transparente.png" alt="Logo ETI" style="width:60px;height:30px;"></a>Herramienta para conocer los peligros naturales que podrían afectar a mi comunidad y los centros de servicios</h2>
+    <h2> <a href="https://www.estudiostecnicos.com/es/"><img src="img/EstTecLogoFinal.jpg" alt="Logo ETI" style="float:left; height:60px; margin-right:15px;"/></a>
+    Herramienta para conocer los peligros naturales que podrían afectar a mi comunidad y los centros de servicios </h2>
+
+
 
   <h4> <i class="far fa-lightbulb"></i> Esta herramienta permite localizar al usuario a la vez que muestra los riesgos y centros de servicio cercanos</em></h4>
 
@@ -137,11 +161,12 @@
       var scale;
 
       // create custom icon
-      var Iconcasa = L.divIcon({
-      	  html: '<i class="fa fa-home" aria-hidden="true"></i>',
-      	  iconSize: [15, 25],
-      	  className: 'myDivIcon'
-      	  });
+    //  var Iconcasa = L.divIcon({
+    //	  html: '<i class="fa fa-home" aria-hidden="true"></i>',
+    //  	  iconSize: [15, 25],
+  //    	  className: 'myDivIcon'
+    //   });
+
       var imgcasa = L.icon({
           iconUrl: 'img/houses.svg',
           iconSize: [5, 10], // size of the icon
@@ -545,13 +570,13 @@
 
            //Overlay grouped layers
       groupedOverlays = {
-        "Riesgos": {
+        "Peligros Naturales": {
           "Erosión costera a 30 años": lyr30yrCoastalEro,
           "Aumento del nivel del mar 3ft": lyrSLR3ft,
           "Áreas inundables": lyrFlood
         },
         "Sectores": {
-          "<img src=Iconcasa> Comunidades": lyrSectores
+          "<img src='img/houses.svg'height=20> Comunidades": lyrSectores
         },
         "Centros de servicio": {
           "<img src='img/shop.svg'height=18> Colmados": Colmados,
