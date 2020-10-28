@@ -53,27 +53,11 @@
         }
 
         html,body,#map {
-          height: 93%;
           width: 100%;
+          height: 93%;
+          bottom: 0;
         }
 
-
-
-        .header img {
-          float: left;
-          width: 50px;
-          height: 50px;
-          background: none;
-
-        }
-        .header h2 {
-        float: left;
-        top: auto;
-        left: 10px;
-        background-color:#C52636;
-        font-family:Verdana, Geneva, sans-serif;
-        overflow: auto;
-        }
         h2 {
           text-align: center;
           text-transform: uppercase;
@@ -104,7 +88,7 @@
 
 
 
-  <h4> <i class="far fa-lightbulb"></i> Esta herramienta permite localizar al usuario a la vez que muestra los riesgos y centros de servicio cercanos</em></h4>
+  <h4> <i class="far fa-lightbulb"></i> Esta herramienta permite localizar al usuario a la vez que muestra los peligros naturales y centros de servicio cercanos</em></h4>
 
 
   <!-- place holder for map -->
@@ -321,7 +305,7 @@
 
       //pasos button
       L.easyButton('<i class="fa fa-list-ol" aria-hidden="true"></i>', function(){
-        alert('paso 1. Oprima el botón "Localízame" para hayar su posición, eso le ayudará a identificar su ubicacion en relacion a los riesgos y a los centros de servicios \npaso 2. Si su posición fue localizada correctamente, puede ir a la leyenda (botón a la derecha) \npaso 3. Ahora puede ver si hay riesgos en su área prendiendo y apagando los riesgos. Además puede ver otra información como Farmacias y Colmados si desea. Los centros de servicios además de su localización muestran un área de 500 metros alrededor del local como distancia accesible, esto varía y no es un criterio aplicable en todos los casos.');
+        alert('paso 1. Oprima el botón "Localízame" para hayar su posición, eso le ayudará a identificar su ubicacion en relacion a los peligos naturales y a los centros de servicios \npaso 2. Si su posición fue localizada correctamente, puede ir a la leyenda (botón a la derecha) \npaso 3. Ahora puede ver si hay peligros naturales en su área activándolos en el encasillado junto al nombre. Además puede ver otra información como Farmacias y Colmados si desea. Los centros de servicios además de su localización muestran un área de 500 metros alrededor del local como distancia accesible, esto varía y no es un criterio aplicable en todos los casos.');
       }, 'Pasos sugeridos').addTo(map);
 
       //info button
