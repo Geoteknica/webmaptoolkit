@@ -550,7 +550,7 @@
             return L.marker(latlng, {icon: imgcntresiliencia});
           },
           onEachFeature: function (feature, layer) {
-          layer.bindPopup(feature.properties.Organizati);
+          layer.bindPopup(feature.properties.Name);
           }
       });
       bufCntresiliencia = L.geoJSON.ajax('data/buff_cnts_resiliencia.geojson',{
